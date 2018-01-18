@@ -10,13 +10,13 @@
 
 
 
+
 function persistance(number){
     var arrayDigits = number.toString().split('')
     console.log(arrayDigits)
     console.log(arrayDigits.length)
-    if(arrayDigits.length == 1){
-        console.log('digit length is 1')
-    }else{
+    if (arrayDigits.length != 1){
+        
       var multiplyValue = arrayDigits.reduce(function(product,element){
         console.log(product)  
         return parseInt(product) * parseInt(element)
@@ -26,6 +26,9 @@ function persistance(number){
     }
     
     persistance(66)
+    
+    
+    
     
     
     
