@@ -1,5 +1,5 @@
 import {expect} from 'chai'
-import {persistance,_split,_multiplyDigits}from './persistance'
+import {persistance,_split}from './persistance'
 
 describe('persistance',()=>{
     it('should return 2 if the input is 35',()=>{
@@ -25,14 +25,6 @@ describe('_split',()=>{
     it('should return [ 3, 5 ] if the input is 35',()=>{
         let result = _split(35)
         let expectedResult = [ 3, 5 ]
-        expect(result).to.eql(expectedResult)
-    })
-})
-
-describe('_multiplyDigits',()=>{
-    it('should return 15 if the input is [3,5]',()=>{
-        let result = _multiplyDigits([3,5])
-        let expectedResult = 15
         expect(result).to.eql(expectedResult)
     })
 })

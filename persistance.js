@@ -1,25 +1,20 @@
 
-function persistance(inputNumber){
-    let counter = 0;
-    while(inputNumber.toString().length > 1){
-        counter ++
-        let b = _split(inputNumber)
-        // console.log(b);
-        inputNumber = _multiplyDigits(b)        
-    }
-    return counter
-}
+function persistance(inputNumber,counter = 0){
     
+    if (inputNumber.toString().length == 1){
+        return counter
+    }else{
+        counter ++
+        let result = _split(inputNumber).reduce(multiValue,1)  
+        return persistance(result,counter)
+    }
+}
+    var multiValue = (x,y)=>x*y    
+
     function _split(input){
         return input.toString().split('')
                     .map(Number)
     }
-    
-    function _multiplyDigits(input){       
-        return input.reduce(function(product,element){
-                return product * element 
-        },1)
-    }
 
-   export {persistance,_split,_multiplyDigits}
+   export {persistance,_split}
 
